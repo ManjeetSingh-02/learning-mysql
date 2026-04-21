@@ -1,0 +1,17 @@
+CREATE DATABASE testing_pk;
+
+USE testing_pk;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(30) UNIQUE NOT NULL,
+    name VARCHAR(50)
+);
+
+ALTER TABLE users DROP PRIMARY KEY;
+
+ALTER TABLE users DROP INDEX email;
+
+ALTER TABLE users AUTO_INCREMENT = 100;
+
+DROP DATABASE testing_pk;
